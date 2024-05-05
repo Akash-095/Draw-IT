@@ -30,7 +30,7 @@ const handleKeyDown = (e:React.KeyboardEvent<HTMLInputElement>)=>{
      {cursorState.mode === CursorMode.Chat && (
      <>
       <CursorSVG color='#000'/>
-      <div className='absolute left-2 top-3 bg-blue-400 px-4 py-2 text-sm leading-relaxed text-white rounded-[20px]'>
+      <div className='absolute left-2 top-3 bg-blue-400 px-4 py-2 text-sm leading-relaxed text-white rounded-[20px]'  onKeyUp={(e) => e.stopPropagation()}>
         {cursorState.previousMessage && (
           <div>{cursorState.previousMessage}</div>
         )}

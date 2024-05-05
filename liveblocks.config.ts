@@ -9,9 +9,9 @@ const client = createClient({
 // Presence represents the properties that exist on every user in the Room
 // and that will automatically be kept in sync. Accessible through the
 // `user.presence` property. Must be JSON-serializable.
-type Presence = {
-  // cursor: { x: number, y: number } | null,
-  // ...
+export type Presence = {
+   cursor: { x: number, y: number } | null,
+  message: string | null;
 };
 
 // Optionally, Storage represents the shared document that persists in the
@@ -21,7 +21,7 @@ type Presence = {
 type Storage = {
   // author: LiveObject<{ firstName: string, lastName: string }>,
   // ...
-  canvasObject:LiveMap<string,any>;
+  canvasObjects:LiveMap<string,any>;
 };
 
 // Optionally, UserMeta represents static/readonly metadata on each user, as
